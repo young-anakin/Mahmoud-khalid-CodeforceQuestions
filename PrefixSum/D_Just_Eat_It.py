@@ -26,15 +26,17 @@ for _ in range(t):
     #     print("NO")
     # print(ps)
     # print(dd)
-    if dd[0] == 1:
-        # print("Yaa")
-        del dd[0]
+    # print(dd[0])
+    # if dd[0] == 1:
+    #     # print("Yaa")
+    #     del dd[0]
+    # print(dd)
     mx = max(dd)
-    # print(ps, mx)
+    # print(ps, mx,yasir)
     if mx > yasir:
         print("NO")
     elif mx == yasir:
-        if dd[mx] > 1:
+        if dd[mx] > 1 or dd[0] > 1 :
             print("NO")
         else:
             print("YES")
