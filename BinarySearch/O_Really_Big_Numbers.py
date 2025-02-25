@@ -8,13 +8,13 @@ def binarySearch(l, r, k):
         
         # val = int(val)
         # print(md-val, md)
-        if md - val > k:
+        if md - val >= k:
             r = md - 1
         elif md - val < k:  
             l = md+1
-        else:
-            # print("yaaaa")
-            return l
+        # else:
+        #     # print("yaaaa")
+        #     return l
         # print(md, l, r)
     
     return l
