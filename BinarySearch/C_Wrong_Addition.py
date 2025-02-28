@@ -5,12 +5,10 @@ for _ in range(t):
     c = c[::-1]
     j = 0
     bucket = []
-    for z in range(len(a)):
-        i = a[z]
+    for i in a:
         tmp = ""
         if j >= len(c):
-            for x in range(z, len(a)):
-                bucket.append(a[x])
+            break
         tmp += c[j]
         j +=1
         while j < len(c) and int(tmp[::-1]) < int(i):
@@ -18,11 +16,37 @@ for _ in range(t):
             j +=1
         
         bucket.append(abs(int(tmp[::-1]) - int(i)))
-        # tmp = ""
-        print(tmp[::-1], i)
     
-    bucket = bucket[::-1]
-    print(bucket)
-        
+    for i in range(j, len(c)):
+        bucket.append(int(c[i]))
+    b = ""
+    for i in bucket:
+        i = str(i)[::-1]
+        b += str(i)
+    
 
-    # print(a, b)
+    
+    fin = []
+    x, y = 0,0
+    while x < len(a) or y < len(b):
+        if x >= len(a) or y >= len(b):
+            if x >= len(a):
+                fin += b[y]
+            if y >= len(b):
+                fin += a[x]
+        else:
+            fin .append(str(int(b[y]) + int(a[x]))[::-1])        
+        y +=1
+        x +=1
+
+    fin = ("".join(fin)[::-1])
+    # print(fin)
+    c = c[::-1]
+    if fin == c:
+        b = b[::-1]
+        b = b.lstrip('0')
+        print(b)
+    else:
+        print(-1)
+    
+
