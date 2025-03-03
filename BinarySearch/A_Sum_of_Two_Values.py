@@ -4,17 +4,18 @@ both = []
 import bisect
 valid = False
 arr2 = list(sorted(arr))
+# print(arr2)
 first, second = 0, 0
 for i in range(len(arr)):
-    mn = bisect.bisect_left(arr, x-arr2[i])
+    mn = bisect.bisect_left(arr2, x-arr2[i])
     if mn < len(arr2):
         if arr2[mn] + arr2[i] == x:
             if mn == i:
                 if arr2.count(arr2[mn]) > 1:
                     xx = []
-                    for i in range(len(arr)):
-                        if arr[i] == arr2[mn]:
-                            xx.append(i)
+                    for j in range(len(arr)):
+                        if arr[j] == arr2[mn]:
+                            xx.append(j)
                     print(xx[0]+1, xx[1]+1)
                     exit()
                 else:
